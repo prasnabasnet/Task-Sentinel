@@ -1,0 +1,15 @@
+meta {
+  name: Delete Department
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{base_url}}/organizations/{{organization_id}}/departments/{{department_id}}/
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Token {{token}}
+}

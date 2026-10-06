@@ -1,0 +1,20 @@
+meta {
+  name: List Comments
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/comments/
+  body: none
+  auth: none
+}
+
+params:query {
+  target_type: task
+  target_id: {{task_id}}
+}
+
+headers {
+  Authorization: Token {{token}}
+}

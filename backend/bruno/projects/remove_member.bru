@@ -1,0 +1,15 @@
+meta {
+  name: Remove Project Member
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{base_url}}/projects/{{project_id}}/members/{{member_user_id}}/
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Token {{token}}
+}

@@ -1,0 +1,20 @@
+.api-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  border-radius: 50%;
+  color: #6b778c;
+  cursor: help;
+  vertical-align: middle;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+.api-hint:hover {
+  color: #0052cc;
+  opacity: 1;
+  background: #deebff;
+}

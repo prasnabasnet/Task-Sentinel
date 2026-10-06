@@ -1,0 +1,23 @@
+meta {
+  name: Create Reply Comment
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/comments/
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Token {{token}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "body": "Thanks @admin_user — I'll take a look at this today.",
+    "parent": {{comment_id}}
+  }
+}

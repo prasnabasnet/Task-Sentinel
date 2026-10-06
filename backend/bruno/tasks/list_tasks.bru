@@ -1,0 +1,19 @@
+meta {
+  name: List Tasks
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/tasks/
+  body: none
+  auth: none
+}
+
+params:query {
+  ~project: {{project_id}}
+}
+
+headers {
+  Authorization: Token {{token}}
+}

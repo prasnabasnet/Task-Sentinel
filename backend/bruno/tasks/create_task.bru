@@ -1,0 +1,32 @@
+meta {
+  name: Create Task
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/tasks/
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Token {{token}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "project": {{project_id}},
+    "title": "Implement Auth System",
+    "description": "Create registration and login views with token auth.",
+    "status": "TODO",
+    "priority": "HIGH"
+  }
+}
+
+script:post-response {
+  if (res.status === 201 && res.body.id) {
+    bru.setEnvVar("task_id", String(res.body.id));
+  }
+}

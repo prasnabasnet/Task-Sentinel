@@ -1,0 +1,15 @@
+meta {
+  name: List Project Members
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base_url}}/projects/{{project_id}}/members/
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Token {{token}}
+}

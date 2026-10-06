@@ -1,0 +1,44 @@
+# Environment & Secrets (NEVER COMMIT THESE)
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Django database & media
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static_collected/
+
+# Package managers & builds
+.uv/
+build/
+dist/
+*.egg-info/
+
+# IDE & Editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs
+*.log

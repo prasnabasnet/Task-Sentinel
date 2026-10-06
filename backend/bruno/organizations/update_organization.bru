@@ -1,0 +1,22 @@
+meta {
+  name: Update Organization
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{base_url}}/organizations/{{organization_id}}/
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Token {{token}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "description": "Updated organization description"
+  }
+}

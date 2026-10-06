@@ -1,0 +1,31 @@
+meta {
+  name: Create Comment
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/comments/
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Token {{token}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "body": "Hey @manager_bob, can you review the auth token expiry logic?",
+    "parent": null,
+    "target_type": "task",
+    "target_id": {{task_id}}
+  }
+}
+
+script:post-response {
+  if (res.status === 201 && res.body.id) {
+    bru.setEnvVar("comment_id", String(res.body.id));
+  }
+}

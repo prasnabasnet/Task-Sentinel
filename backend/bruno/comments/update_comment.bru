@@ -1,0 +1,22 @@
+meta {
+  name: Update Comment
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{base_url}}/comments/{{comment_id}}/
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Token {{token}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "body": "Updated: Hey @developer_sarah and @bob, please review the auth changes."
+  }
+}

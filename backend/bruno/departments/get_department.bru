@@ -1,0 +1,15 @@
+meta {
+  name: Get Department Detail
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/organizations/{{organization_id}}/departments/{{department_id}}/
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Token {{token}}
+}

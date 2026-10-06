@@ -1,0 +1,73 @@
+[
+  {
+    "model": "organization.organization",
+    "pk": 1,
+    "fields": {
+      "name": "Initech Corp",
+      "description": "Enterprise software consultancy.",
+      "owner": 1,
+      "slug": "initech-corp",
+      "is_active": true,
+      "created_at": "2026-07-08T12:06:00Z",
+      "updated_at": "2026-07-08T12:06:00Z"
+    }
+  },
+  {
+    "model": "organization.organization",
+    "pk": 2,
+    "fields": {
+      "name": "Soylent Green Co",
+      "description": "Agricultural tech startup.",
+      "owner": 2,
+      "slug": "soylent-green-co",
+      "is_active": true,
+      "created_at": "2026-07-08T12:07:00Z",
+      "updated_at": "2026-07-08T12:07:00Z"
+    }
+  },
+  {
+    "model": "organization.organizationmember",
+    "pk": 1,
+    "fields": {
+      "organization": 1,
+      "user": 1,
+      "joined_at": "2026-07-08T12:08:00Z"
+    }
+  },
+  {
+    "model": "organization.organizationmember",
+    "pk": 2,
+    "fields": {
+      "organization": 1,
+      "user": 2,
+      "joined_at": "2026-07-08T12:08:00Z"
+    }
+  },
+  {
+    "model": "organization.organizationmember",
+    "pk": 3,
+    "fields": {
+      "organization": 1,
+      "user": 3,
+      "joined_at": "2026-07-08T12:08:00Z"
+    }
+  },
+  {
+    "model": "organization.organizationmember",
+    "pk": 4,
+    "fields": {
+      "organization": 2,
+      "user": 4,
+      "joined_at": "2026-07-08T12:09:00Z"
+    }
+  },
+  {
+    "model": "organization.organizationmember",
+    "pk": 5,
+    "fields": {
+      "organization": 2,
+      "user": 5,
+      "joined_at": "2026-07-08T12:09:00Z"
+    }
+  }
+]
