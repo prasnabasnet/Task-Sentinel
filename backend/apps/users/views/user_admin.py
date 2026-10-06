@@ -11,6 +11,8 @@ class UserViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated, IsAdmin]
     http_method_names = ["get", "patch", "delete", "head", "options"]
 
+    lookup_value_regex = r"\d+"
+
     def get_queryset(self):
         return GetAllUsersService.execute(request=self.request)
 

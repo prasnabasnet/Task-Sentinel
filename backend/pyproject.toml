@@ -33,6 +33,9 @@ dev = [
     "factory-boy>=3.3.3",
     "pytest>=9.1.1",
     "pytest-django>=4.12.0",
+    "pytest-html>=4.2.0",
+    "pytest-playwright>=0.9.0",
+    "requests>=2.34.2",
 ]
 
 [tool.basedpyright]
