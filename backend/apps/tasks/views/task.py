@@ -14,6 +14,8 @@ from apps.tasks.services import(
     DeleteTaskService,
     UpdateTaskService,
 )
+from apps.tasks.services import BugReportService 
+from rest_framework.decorators import action
 
 
 class TaskViewSet(viewsets.ModelViewSet):
@@ -83,3 +85,9 @@ class TaskViewSet(viewsets.ModelViewSet):
         instance = self.get_object()
         DeleteTaskService.execute(request=request, task=instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+    @action(detail=True, methods=["get"], url_path="export-report")
+    def export_report(self, request, pk=None):
+        task = self.get_object()
+        report_md = BugReportService.generate_markdown(task)
+        return Response({"markdown": report_md})

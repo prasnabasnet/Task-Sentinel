@@ -176,3 +176,26 @@ class DeleteTaskService(BaseService):
                 "task_id": task_id,
             },
         )
+class BugReportService:
+    @staticmethod
+    def generate_markdown(task) -> str:
+        """Formats a bug record into standard QA Markdown."""
+        return f"""# [BUG-{task.id}] {task.title}
+
+**Severity:** {task.get_severity_display() if hasattr(task, 'get_severity_display') else task.severity}
+**Priority:** {task.get_priority_display()}
+**Environment:** {task.environment or 'Not specified'}
+**Reported By:** {task.created_by.email}
+**Status:** {task.get_status_display()}
+
+---
+
+### Steps to Reproduce
+{task.steps_to_reproduce or 'No steps provided.'}
+
+### Expected Behavior
+{task.expected_behavior or 'No expected behavior provided.'}
+
+### Actual Behavior
+{task.actual_behavior or 'No actual behavior provided.'}
+"""

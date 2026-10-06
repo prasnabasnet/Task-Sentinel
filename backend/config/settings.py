@@ -140,7 +140,7 @@ CHANNEL_LAYERS = {
 
 # Database Configuration using DATABASE_URL from .env
 DATABASES = {
-    "default": env.db(),
+    "default": env.db("DATABASE_URL"),
 }
 
 
