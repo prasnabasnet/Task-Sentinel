@@ -140,7 +140,7 @@ CHANNEL_LAYERS = {
 DATABASES = {
     "default": env.db("DATABASE_URL"),
 }
-
+DATABASES["default"]["CONN_MAX_AGE"] = 600
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators

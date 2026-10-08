@@ -38,7 +38,7 @@ def send_welcome_email_task(self, user_id: int):
         logger.info(f"[send_welcome_email_task] Welcome email successfully sent to {user.email}.")
     except Exception as exc:
         logger.error(f"[send_welcome_email_task] Error sending welcome email to user_id={user_id}: {exc}", exc_info=True)
-        raise self.retry(exc=exc)
+        # raise self.retry(exc=exc)
 
 
 @shared_task(bind=True, max_retries=3, default_retry_delay=60)
