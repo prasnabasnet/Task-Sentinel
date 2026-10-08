@@ -130,12 +130,10 @@ ASGI_APPLICATION = "config.asgi.application"
 # Redis & Channel Layers
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [env("REDIS_URL", default="redis://127.0.0.1:6379/0")],
-        },
-    }
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+    },
 }
+
 
 
 # Database Configuration using DATABASE_URL from .env
@@ -367,3 +365,7 @@ DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="onboarding@resend.dev")
 ANYMAIL = {
     "RESEND_API_KEY": RESEND_API_KEY,
 }
+
+# Run Celery tasks immediately in-memory without needing a Redis broker [2]
+CELERY_TASK_ALWAYS_EAGER = True
+CELERY_TASK_EAGER_PROPAGATES = True
